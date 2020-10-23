@@ -1,0 +1,18 @@
+==16308== NVPROF is profiling process 16308, command: ./saxpy -n 200000
+==16308== Profiling application: ./saxpy -n 200000
+==16308== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   51.50%  259.67us         2  129.84us  129.66us  130.01us  [CUDA memcpy HtoD]
+                   24.65%  124.28us         1  124.28us  124.28us  124.28us  saxpy_cuda(int, float, float*, float*)
+                   23.85%  120.28us         1  120.28us  120.28us  120.28us  [CUDA memcpy DtoH]
+      API calls:   98.44%  103.58ms         2  51.789ms  126.71us  103.45ms  cudaMalloc
+                    0.75%  788.48us         3  262.83us  153.12us  378.18us  cudaMemcpy
+                    0.38%  395.73us        96  4.1220us     329ns  170.53us  cuDeviceGetAttribute
+                    0.18%  193.18us         2  96.591us  75.341us  117.84us  cudaFree
+                    0.13%  138.15us         1  138.15us  138.15us  138.15us  cuDeviceTotalMem
+                    0.06%  63.406us         1  63.406us  63.406us  63.406us  cudaLaunchKernel
+                    0.04%  44.400us         1  44.400us  44.400us  44.400us  cuDeviceGetName
+                    0.01%  9.7730us         1  9.7730us  9.7730us  9.7730us  cuDeviceGetPCIBusId
+                    0.00%  2.7910us         3     930ns     460ns  1.7800us  cuDeviceGetCount
+                    0.00%  1.8730us         2     936ns     406ns  1.4670us  cuDeviceGet
+                    0.00%     584ns         1     584ns     584ns     584ns  cuDeviceGetUuid
